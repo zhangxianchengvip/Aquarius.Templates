@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Zhang xian cheng",
+    "classifications": [ "WebAPI" ],
+    "name": "Aquarius AbpVNext Web API",
+    "identity": "Aquarius.AbpVNext.Template", 
+    "shortName": "AAVW",
+    "tags": {
+      "language": "C#" ,
+      "type":"project"
+    },
+    "sourceName": "Aquarius",
+    "preferNameDirectory": true
+}

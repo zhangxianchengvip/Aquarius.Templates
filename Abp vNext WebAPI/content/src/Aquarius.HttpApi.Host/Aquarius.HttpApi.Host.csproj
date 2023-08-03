@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="6.0.3" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="6.0.3" />
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="6.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aquarius.Application\Aquarius.Application.csproj" />
+    <ProjectReference Include="..\Aquarius.EntityFrameworkCore\Aquarius.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Aquarius.HttpApi\Aquarius.HttpApi.csproj" />
+  </ItemGroup>
+
+</Project>
