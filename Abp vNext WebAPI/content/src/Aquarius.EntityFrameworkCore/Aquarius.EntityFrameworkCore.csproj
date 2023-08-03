@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="EntityTypeConfigurations\**" />
+    <Compile Remove="Migrations\**" />
+    <EmbeddedResource Remove="EntityTypeConfigurations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="EntityTypeConfigurations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aquarius.Domain\Aquarius.Domain.csproj" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="6.0.3" />
   </ItemGroup>
@@ -17,11 +26,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
       <PrivateAssets>compile; contentFiles; build; buildMultitargeting; buildTransitive; analyzers; native</PrivateAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="EntityTypeConfigurations\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
