@@ -1,14 +1,20 @@
 {
-    "$schema": "http://json.schemastore.org/template",
-    "author": "Zhang xian cheng",
-    "classifications": [ "WebAPI" ],
-    "name": "Aquarius Template AbpVNext Web API",
-    "identity": "Aquarius.Template.AbpVNext.WebAPI", 
-    "shortName": "ATAW",
-    "tags": {
-      "language": "C#" ,
-      "type":"project"
-    },
-    "sourceName": "Aquarius",
-    "preferNameDirectory": true
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Zhangxiancheng",
+  "classifications": [
+    "Aquarius",
+    "WebApi",
+    "Api",
+    "RESTful",
+    "Swagger"
+  ],
+  "name": "Aquarius Abp vNext WebApi",
+  "identity": "Aquarius.Template.AbpvNextWebApi",
+  "shortName": "abpwebapi",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "Aquarius",
+  "preferNameDirectory": true
 }

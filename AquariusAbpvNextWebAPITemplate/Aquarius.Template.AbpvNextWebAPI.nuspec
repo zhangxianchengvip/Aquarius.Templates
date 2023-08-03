@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Aquarius.Template.AbpvNextWebApi</id>
+    <version>6.0.1</version>
+    <description>基于 AbpvNext 框架快速搭建 WebApi 多层架构模板。</description>
+    <authors>Zhangxiancheng</authors>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+    <icon>icon.png</icon>
+    <license type="expression">MIT</license>
+    <readme>content\README.md</readme>
+
+  </metadata>
+</package>
