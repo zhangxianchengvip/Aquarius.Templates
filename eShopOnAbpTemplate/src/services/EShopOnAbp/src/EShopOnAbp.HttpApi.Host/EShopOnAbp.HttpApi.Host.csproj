@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="6.0.3" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="6.0.3" />
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="6.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EShopOnAbp.Application\EShopOnAbp.Application.csproj" />
+    <ProjectReference Include="..\EShopOnAbp.EntityFrameworkCore\EShopOnAbp.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\EShopOnAbp.HttpApi\EShopOnAbp.HttpApi.csproj" />
+  </ItemGroup>
+
+</Project>

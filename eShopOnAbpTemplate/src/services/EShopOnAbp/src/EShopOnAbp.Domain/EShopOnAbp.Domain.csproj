@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>EShopOnAbp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DependencyServices\**" />
+    <Compile Remove="DomainServices\**" />
+    <Compile Remove="Entitys\**" />
+    <Compile Remove="Enums\**" />
+    <Compile Remove="Events\**" />
+    <EmbeddedResource Remove="DependencyServices\**" />
+    <EmbeddedResource Remove="DomainServices\**" />
+    <EmbeddedResource Remove="Entitys\**" />
+    <EmbeddedResource Remove="Enums\**" />
+    <EmbeddedResource Remove="Events\**" />
+    <None Remove="DependencyServices\**" />
+    <None Remove="DomainServices\**" />
+    <None Remove="Entitys\**" />
+    <None Remove="Enums\**" />
+    <None Remove="Events\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="6.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EShopOnAbp.Domain.Shared\EShopOnAbp.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
