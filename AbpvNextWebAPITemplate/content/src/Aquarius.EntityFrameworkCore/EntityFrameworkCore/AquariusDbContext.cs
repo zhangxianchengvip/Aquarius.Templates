@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
+using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace Aquarius.EntityFrameworkCore;
@@ -7,9 +8,9 @@ namespace Aquarius.EntityFrameworkCore;
 [ConnectionStringName("Default")]
 public class AquariusDbContext :AbpDbContext<AquariusDbContext>
 {
-    /* Add DbSet properties for your Aggregate Roots / Entities here. */
 
     #region Entities from the modules
+
 
     #endregion
 

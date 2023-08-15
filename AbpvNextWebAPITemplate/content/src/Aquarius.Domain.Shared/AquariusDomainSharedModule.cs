@@ -13,11 +13,17 @@ namespace Aquarius;
     )]
 public class AquariusDomainSharedModule : AbpModule
 {
+    public override void PreConfigureServices(ServiceConfigurationContext context)
+    {
+        AquariusGlobalFeatureConfigurator.Configure();
+        AquariusModuleExtensionConfigurator.Configure();
+    }
+
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         Configure<AbpVirtualFileSystemOptions>(options =>
         {
-            options.FileSets.AddEmbedded<AquariusDomainSharedModule>(baseNamespace: "Aquarius");
+            options.FileSets.AddEmbedded<AquariusDomainSharedModule>();
         });
 
         Configure<AbpLocalizationOptions>(options =>

@@ -1,10 +1,11 @@
-﻿using Volo.Abp.Application;
-using Volo.Abp.Modularity;
+﻿using Volo.Abp.Modularity;
+using Volo.Abp.ObjectExtending;
 
 namespace Aquarius;
 
 [DependsOn(
-    typeof(AbpDddApplicationContractsModule)
+    typeof(AquariusDomainSharedModule),
+    typeof(AbpObjectExtendingModule)
 )]
 public class AquariusApplicationContractsModule : AbpModule
 {

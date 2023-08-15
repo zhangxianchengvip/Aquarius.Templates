@@ -256,7 +256,7 @@ src/Aquarius.Web/Logs/*
 src/Aquarius.Web.Host/Logs/*
 src/Aquarius.AuthServer/Logs/*
 src/Aquarius.HttpApi.Host/Logs/*
-src/Aquarius.HttpApi.HostWithIds/Logs/*
+src/Aquarius.HttpApi.Host/Logs/*
 src/Aquarius.DbMigrator/Logs/*
 src/Aquarius.Blazor.Server/Logs/*
 src/Aquarius.Blazor.Server.Tiered/Logs/*

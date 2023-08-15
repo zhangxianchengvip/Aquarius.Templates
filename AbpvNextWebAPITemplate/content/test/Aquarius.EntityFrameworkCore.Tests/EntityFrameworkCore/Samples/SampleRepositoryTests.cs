@@ -1,4 +1,13 @@
-﻿namespace Aquarius.EntityFrameworkCore.Samples;
+﻿using Microsoft.EntityFrameworkCore;
+using Shouldly;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+using Volo.Abp.Domain.Repositories;
+using Volo.Abp.Identity;
+using Xunit;
+
+namespace Aquarius.EntityFrameworkCore.Samples;
 
 /* This is just an example test class.
  * Normally, you don't test ABP framework code
@@ -7,28 +16,28 @@
  */
 public class SampleRepositoryTests : AquariusEntityFrameworkCoreTestBase
 {
-    //private readonly IRepository<IdentityUser, Guid> _appUserRepository;
+    private readonly IRepository<IdentityUser, Guid> _appUserRepository;
 
-    //public SampleRepositoryTests()
-    //{
-    //    _appUserRepository = GetRequiredService<IRepository<IdentityUser, Guid>>();
-    //}
+    public SampleRepositoryTests()
+    {
+        _appUserRepository = GetRequiredService<IRepository<IdentityUser, Guid>>();
+    }
 
-    //[Fact]
-    //public async Task Should_Query_AppUser()
-    //{
-    //    /* Need to manually start Unit Of Work because
-    //     * FirstOrDefaultAsync should be executed while db connection / context is available.
-    //     */
-    //    await WithUnitOfWorkAsync(async () =>
-    //    {
-    //            //Act
-    //            var adminUser = await (await _appUserRepository.GetQueryableAsync())
-    //            .Where(u => u.UserName == "admin")
-    //            .FirstOrDefaultAsync();
+    [Fact]
+    public async Task Should_Query_AppUser()
+    {
+        /* Need to manually start Unit Of Work because
+         * FirstOrDefaultAsync should be executed while db connection / context is available.
+         */
+        await WithUnitOfWorkAsync(async () =>
+        {
+                //Act
+                var adminUser = await (await _appUserRepository.GetQueryableAsync())
+                .Where(u => u.UserName == "admin")
+                .FirstOrDefaultAsync();
 
-    //            //Assert
-    //            adminUser.ShouldNotBeNull();
-    //    });
-    //}
+                //Assert
+                adminUser.ShouldNotBeNull();
+        });
+    }
 }

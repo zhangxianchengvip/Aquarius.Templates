@@ -8,7 +8,7 @@ namespace Aquarius;
 
 /* Inherit your application services from this class.
  */
-public abstract class AquariusAppService : ApplicationService
+public class AquariusAppService : ApplicationService
 {
     protected AquariusAppService()
     {

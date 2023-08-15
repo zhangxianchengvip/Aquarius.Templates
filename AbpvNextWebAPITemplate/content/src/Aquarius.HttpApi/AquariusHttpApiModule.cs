@@ -1,4 +1,5 @@
 ﻿using Aquarius.Localization;
+using Localization.Resources.AbpUi;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 
@@ -21,7 +22,7 @@ public class AquariusHttpApiModule : AbpModule
             options.Resources
                 .Get<AquariusResource>()
                 .AddBaseTypes(
-                    typeof(AquariusHttpApiModule)
+                    typeof(AbpUiResource)
                 );
         });
     }

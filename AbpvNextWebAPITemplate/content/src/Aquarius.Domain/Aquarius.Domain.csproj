@@ -8,24 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="DependencyServices\**" />
-    <Compile Remove="DomainServices\**" />
-    <Compile Remove="Entitys\**" />
-    <Compile Remove="Enums\**" />
-    <Compile Remove="Events\**" />
-    <EmbeddedResource Remove="DependencyServices\**" />
-    <EmbeddedResource Remove="DomainServices\**" />
-    <EmbeddedResource Remove="Entitys\**" />
-    <EmbeddedResource Remove="Enums\**" />
-    <EmbeddedResource Remove="Events\**" />
-    <None Remove="DependencyServices\**" />
-    <None Remove="DomainServices\**" />
-    <None Remove="Entitys\**" />
-    <None Remove="Enums\**" />
-    <None Remove="Events\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="6.0.3" />
   </ItemGroup>
 

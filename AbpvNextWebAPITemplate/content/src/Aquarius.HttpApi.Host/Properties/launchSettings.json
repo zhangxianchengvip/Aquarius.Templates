@@ -1,28 +1,24 @@
-﻿{
-  "$schema": "https://json.schemastore.org/launchsettings.json",
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:44333",
-      "sslPort": 0
+      "applicationUrl": "https://localhost:44398",
+      "sslPort": 44398
     }
   },
   "profiles": {
-    "Aquarius.HttpApi.Host": {
-      "commandName": "Project",
-      "dotnetRunMessages": true,
+    "IIS Express": {
+      "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5225",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "IIS Express": {
-      "commandName": "IISExpress",
+    "Aquarius.HttpApi.Host": {
+      "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:44398",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -1,7 +1,12 @@
-using Serilog.Events;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Serilog;
+using Serilog.Events;
 
-namespace Aquarius.Web;
+namespace Aquarius;
 
 public class Program
 {
@@ -22,9 +27,11 @@ public class Program
 
         try
         {
-            Log.Information("Starting web host.");
+            Log.Information("Starting Aquarius.HttpApi.Host.");
             var builder = WebApplication.CreateBuilder(args);
-            builder.Host.UseAutofac().UseSerilog();
+            builder.Host.AddAppSettingsSecretsJson()
+                .UseAutofac()
+                .UseSerilog();
             await builder.AddApplicationAsync<AquariusHttpApiHostModule>();
             var app = builder.Build();
             await app.InitializeApplicationAsync();
