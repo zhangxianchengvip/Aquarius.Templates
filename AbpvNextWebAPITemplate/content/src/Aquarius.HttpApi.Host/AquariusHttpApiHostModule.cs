@@ -78,7 +78,10 @@ public class AquariusHttpApiHostModule : AbpModule
     {
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
-            options.ConventionalControllers.Create(typeof(AquariusApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(AquariusApplicationModule).Assembly, opt => 
+            {
+                opt.RootPath = "v1";
+            });
         });
     }
 

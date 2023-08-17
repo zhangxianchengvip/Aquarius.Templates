@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Aquarius.Tests;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
@@ -11,7 +12,7 @@ public class AquariusDbContext :AbpDbContext<AquariusDbContext>
 
     #region Entities from the modules
 
-
+    public DbSet<Test> Tests { get; set; }
     #endregion
 
     public AquariusDbContext(DbContextOptions<AquariusDbContext> options)

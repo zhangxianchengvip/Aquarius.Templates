@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Aquarius.Tests.Cmds;
-public class UpdateAge
+public class CreateDto 
 {
-    public Guid Id { get; set; }
-    public int Age { get; set; }
+    public string Name { get; set; }
 }
+

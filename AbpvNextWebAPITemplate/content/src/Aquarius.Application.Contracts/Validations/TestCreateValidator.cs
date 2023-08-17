@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 namespace Microsoft.eShopOnContainers.Services.Ordering.API.Application.Validations;
 
 
-public class TestCreateValidator : AbstractValidator<Create>
+public class TestCreateValidator : AbstractValidator<CreateDto>
 {
     public TestCreateValidator(ILogger<TestCreateValidator> logger)
     {

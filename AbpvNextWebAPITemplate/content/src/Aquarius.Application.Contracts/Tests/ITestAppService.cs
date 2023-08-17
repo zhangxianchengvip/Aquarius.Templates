@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Services;
 
 namespace Aquarius.Tests;
-public interface ITestApp:IApplicationService
+public interface ITestAppService:IApplicationService
 {
-    Task<TestViewModel> Create(Create input);
-    Task<TestViewModel> UpdteAge(UpdateAge input);
+    Task<TestViewModel> Create(CreateDto input);
+    Task<TestViewModel> UpdteAge(UpdateAgeDto input);
 }
