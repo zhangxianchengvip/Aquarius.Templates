@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities;
 
@@ -23,7 +19,10 @@ public class Test : BasicAggregateRoot<Guid>
         {
             throw new BusinessException(AquariusDomainErrorCodes.AgeOutOfRange)
             {
-                Data = { { "age", age } }
+                Data =
+                {
+                    { "age", age }
+                }
             };
         }
 

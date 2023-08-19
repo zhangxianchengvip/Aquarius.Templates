@@ -23,13 +23,13 @@ public class AquariusDomainSharedModule : AbpModule
     {
         Configure<AbpVirtualFileSystemOptions>(options =>
         {
-            options.FileSets.AddEmbedded<AquariusDomainSharedModule>();
+            options.FileSets.AddEmbedded<AquariusDomainSharedModule>(baseNamespace: "Aquarius");
         });
 
         Configure<AbpLocalizationOptions>(options =>
         {
             options.Resources
-                .Add<AquariusResource>("en")
+                .Add<AquariusResource>("zh-Hans")
                 .AddBaseTypes(typeof(AbpValidationResource))
                 .AddVirtualJson("/Localization/Aquarius");
 

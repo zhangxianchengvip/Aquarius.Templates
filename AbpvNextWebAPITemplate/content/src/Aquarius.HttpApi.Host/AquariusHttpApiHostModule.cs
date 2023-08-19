@@ -78,7 +78,7 @@ public class AquariusHttpApiHostModule : AbpModule
     {
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
-            options.ConventionalControllers.Create(typeof(AquariusApplicationModule).Assembly, opt => 
+            options.ConventionalControllers.Create(typeof(AquariusApplicationModule).Assembly, opt =>
             {
                 opt.RootPath = "v1";
             });
@@ -168,14 +168,15 @@ public class AquariusHttpApiHostModule : AbpModule
         {
             app.UseDeveloperExceptionPage();
         }
+        //本地化
+        var supportedCultures = new[] { "zh-Hans" };
 
-        app.UseAbpRequestLocalization();
-
-        if (!env.IsDevelopment())
+        app.UseAbpRequestLocalization((options) =>
         {
-            app.UseDeveloperExceptionPage();
-        }
-        
+            options.AddSupportedCultures(supportedCultures);
+            options.AddSupportedUICultures(supportedCultures);
+            options.SetDefaultCulture(supportedCultures[0]);
+        });
         app.UseCorrelationId();
         app.UseStaticFiles();
         app.UseRouting();

@@ -1,36 +1,36 @@
-﻿using Aquarius.Tests.Specifications;
+﻿using Aquarius.Localization;
+using Aquarius.Tests.Specifications;
+using Microsoft.Extensions.Localization;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 using Volo.Abp;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Domain.Services;
-using Volo.Abp.Uow;
 
 namespace Aquarius.Tests;
 public class TestManager : DomainService
 {
     private readonly IRepository<Test, Guid> _repository;
-
-    public TestManager(IRepository<Test, Guid> repository)
+    private readonly IStringLocalizer<AquariusResource> _localizableString;
+    public TestManager(IRepository<Test, Guid> repository, IStringLocalizer<AquariusResource> localizableString)
     {
         _repository = repository;
+        _localizableString = localizableString;
     }
 
     public async Task<Test> Create(string name)
     {
-        //var any = await _repository.AnyAsync(new TestNameEqualSpec(name));
+        var any = await _repository.AnyAsync(new TestNameEqualSpec(name));
 
-        //if (any)
-        //{
-        //    throw new BusinessException(AquariusDomainErrorCodes.TestExist)
-        //    {
-        //        Data = { { "name", name } }
-        //    };
-        //}
+        if (any)
+        {
+            var ss = _localizableString[AquariusDomainErrorCodes.TestExist];
+
+            throw new BusinessException(AquariusDomainErrorCodes.TestExist)
+            {
+                Data = { { "Name", name } }
+            };
+        }
 
         Test test = new(GuidGenerator.Create(), name);
 
