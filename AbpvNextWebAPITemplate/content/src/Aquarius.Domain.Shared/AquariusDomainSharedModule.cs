@@ -38,7 +38,7 @@ public class AquariusDomainSharedModule : AbpModule
 
         Configure<AbpExceptionLocalizationOptions>(options =>
         {
-            options.MapCodeNamespace("Aquarius", typeof(AquariusResource));
+            options.MapCodeNamespace("Aquarius.Exception", typeof(AquariusResource));
         });
     }
 }

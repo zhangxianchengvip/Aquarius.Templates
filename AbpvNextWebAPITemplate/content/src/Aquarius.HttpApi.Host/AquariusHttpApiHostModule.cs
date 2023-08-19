@@ -168,15 +168,8 @@ public class AquariusHttpApiHostModule : AbpModule
         {
             app.UseDeveloperExceptionPage();
         }
-        //本地化
-        var supportedCultures = new[] { "zh-Hans" };
 
-        app.UseAbpRequestLocalization((options) =>
-        {
-            options.AddSupportedCultures(supportedCultures);
-            options.AddSupportedUICultures(supportedCultures);
-            options.SetDefaultCulture(supportedCultures[0]);
-        });
+        app.UseAbpRequestLocalization();
         app.UseCorrelationId();
         app.UseStaticFiles();
         app.UseRouting();

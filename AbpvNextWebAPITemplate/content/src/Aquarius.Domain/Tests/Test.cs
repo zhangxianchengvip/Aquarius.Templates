@@ -15,13 +15,13 @@ public class Test : BasicAggregateRoot<Guid>
 
     internal Test SetAge(int age)
     {
-        if (age <= 0 || age >= 100)
+        if (age < 0 || age > 120)
         {
             throw new BusinessException(AquariusDomainErrorCodes.AgeOutOfRange)
             {
                 Data =
                 {
-                    { "age", age }
+                    { "Age", age }
                 }
             };
         }

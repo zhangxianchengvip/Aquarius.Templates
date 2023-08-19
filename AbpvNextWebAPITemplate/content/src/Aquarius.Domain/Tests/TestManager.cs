@@ -26,7 +26,7 @@ public class TestManager : DomainService
         {
             var ss = _localizableString[AquariusDomainErrorCodes.TestExist];
 
-            throw new BusinessException(AquariusDomainErrorCodes.TestExist)
+           throw new BusinessException(AquariusDomainErrorCodes.TestExist)
             {
                 Data = { { "Name", name } }
             };
@@ -45,7 +45,7 @@ public class TestManager : DomainService
         {
             throw new BusinessException(AquariusDomainErrorCodes.TestNotExist)
             {
-                Data = { { "id", id } }
+                Data = { { "Id", id } }
             };
         }
 

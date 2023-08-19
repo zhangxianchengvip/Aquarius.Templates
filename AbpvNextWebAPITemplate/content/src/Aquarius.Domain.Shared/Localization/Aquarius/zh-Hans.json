@@ -1,11 +1,11 @@
 {
-    "culture": "zh-Hans",
+  "culture": "zh-Hans",
   "texts": {
     "Menu:Home": "首页",
     "Welcome": "欢迎",
     "LongWelcomeMessage": "欢迎来到该应用程序. 这是一个基于ABP框架的启动项目. 有关更多信息, 请访问 abp.io.",
-    "Test:0001": "年龄超出范围=>'{age}'",
-    "Test:0002": "Test 存在=>'{Name}'",
-    "Test:0003": "Test 不存在=>'{id}'"
+    "Aquarius.Exception:0001": "年龄超出范围=>'{Age}'",
+    "Aquarius.Exception:0002": "Test 存在=>'{Name}'",
+    "Aquarius.Exception:0003": "Test 不存在=>'{Id}'"
   }
-  }
+}
