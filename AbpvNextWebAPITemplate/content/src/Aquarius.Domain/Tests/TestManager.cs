@@ -22,15 +22,15 @@ public class TestManager : DomainService
 
     public async Task<Test> Create(string name)
     {
-        var any = await _repository.AnyAsync(new TestNameEqualSpec(name));
+        //var any = await _repository.AnyAsync(new TestNameEqualSpec(name));
 
-        if (any)
-        {
-            throw new BusinessException(AquariusDomainErrorCodes.TestExist)
-            {
-                Data = { { "name", name } }
-            };
-        }
+        //if (any)
+        //{
+        //    throw new BusinessException(AquariusDomainErrorCodes.TestExist)
+        //    {
+        //        Data = { { "name", name } }
+        //    };
+        //}
 
         Test test = new(GuidGenerator.Create(), name);
 

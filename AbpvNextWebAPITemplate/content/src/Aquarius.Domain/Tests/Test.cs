@@ -7,7 +7,7 @@ using Volo.Abp;
 using Volo.Abp.Domain.Entities;
 
 namespace Aquarius.Tests;
-public class Test : Entity<Guid>
+public class Test : BasicAggregateRoot<Guid>
 {
     public string Name { get; init; }
     public int? Age { get; private set; }

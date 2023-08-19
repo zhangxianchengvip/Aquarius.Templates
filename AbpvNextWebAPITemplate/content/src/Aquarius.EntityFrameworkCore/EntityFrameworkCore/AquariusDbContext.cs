@@ -7,7 +7,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Aquarius.EntityFrameworkCore;
 
 [ConnectionStringName("Default")]
-public class AquariusDbContext :AbpDbContext<AquariusDbContext>
+public class AquariusDbContext : AbpDbContext<AquariusDbContext>
 {
 
     #region Entities from the modules
@@ -24,5 +24,6 @@ public class AquariusDbContext :AbpDbContext<AquariusDbContext>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        builder.Entity<Test>().ToTable($"{AquariusConsts.DbTablePrefix}_Tests");
     }
 }

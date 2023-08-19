@@ -7,7 +7,8 @@ namespace Aquarius;
 [DependsOn(
     typeof(AquariusDomainModule),
     typeof(AbpDddApplicationModule),
-    typeof(AquariusApplicationContractsModule)
+    typeof(AquariusApplicationContractsModule),
+    typeof(AbpAutoMapperModule)
     )]
 public class AquariusApplicationModule : AbpModule
 {

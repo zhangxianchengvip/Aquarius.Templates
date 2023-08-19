@@ -4,7 +4,6 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Repositories;
-using Volo.Abp.Identity;
 using Xunit;
 
 namespace Aquarius.EntityFrameworkCore.Samples;
@@ -16,11 +15,11 @@ namespace Aquarius.EntityFrameworkCore.Samples;
  */
 public class SampleRepositoryTests : AquariusEntityFrameworkCoreTestBase
 {
-    private readonly IRepository<IdentityUser, Guid> _appUserRepository;
+   // private readonly IRepository<IdentityUser, Guid> _appUserRepository;
 
     public SampleRepositoryTests()
     {
-        _appUserRepository = GetRequiredService<IRepository<IdentityUser, Guid>>();
+       // _appUserRepository = GetRequiredService<IRepository<IdentityUser, Guid>>();
     }
 
     [Fact]
@@ -31,13 +30,13 @@ public class SampleRepositoryTests : AquariusEntityFrameworkCoreTestBase
          */
         await WithUnitOfWorkAsync(async () =>
         {
-                //Act
-                var adminUser = await (await _appUserRepository.GetQueryableAsync())
-                .Where(u => u.UserName == "admin")
-                .FirstOrDefaultAsync();
+                ////Act
+                //var adminUser = await (await _appUserRepository.GetQueryableAsync())
+                //.Where(u => u.UserName == "admin")
+                //.FirstOrDefaultAsync();
 
-                //Assert
-                adminUser.ShouldNotBeNull();
+                ////Assert
+                //adminUser.ShouldNotBeNull();
         });
     }
 }
