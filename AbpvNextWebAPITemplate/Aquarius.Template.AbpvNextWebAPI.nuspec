@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Aquarius.Template.AbpvNextWebApi</id>
-    <version>6.0.2</version>
-    <description>基于 AbpvNext 框架快速搭建 WebApi 多层架构模板。</description>
+    <version>6.0.3</version>
+    <description>基于 AbpvNext 核心模块搭建 WebApi 多层架构模，去除多余部分，增加性能监测模块。</description>
     <authors>Zhangxiancheng</authors>
     <packageTypes>
       <packageType name="Template" />
