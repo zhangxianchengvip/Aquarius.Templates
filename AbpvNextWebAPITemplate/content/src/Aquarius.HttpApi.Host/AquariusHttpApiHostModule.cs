@@ -1,9 +1,7 @@
 using Aquarius.EntityFrameworkCore;
-using Autofac.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,7 +18,6 @@ using Volo.Abp.Autofac;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
-using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
 
 namespace Aquarius;
@@ -163,6 +160,9 @@ public class AquariusHttpApiHostModule : AbpModule
     {
         var app = context.GetApplicationBuilder();
         var env = context.GetEnvironment();
+        var configuration = context.GetConfiguration();
+
+        var virtualPath = configuration.GetValue<string>("App:VirtualPath")??"";
 
         if (env.IsDevelopment())
         {
@@ -172,20 +172,26 @@ public class AquariusHttpApiHostModule : AbpModule
         app.UseAbpRequestLocalization();
         app.UseCorrelationId();
         app.UseStaticFiles();
+        app.UsePathBase(new PathString(virtualPath));
         app.UseRouting();
         app.UseCors();
         app.UseAuthentication();
         app.UseUnitOfWork();
         app.UseAuthorization();
         app.UseMiniProfiler();
-        app.UseSwagger();
+        app.UseSwagger(o =>
+        {
+            o.PreSerializeFilters.Add((swagger, httpReq) =>
+            {
+                //根据访问地址，设置swagger服务路径
+                swagger.Servers = new List<OpenApiServer> { new OpenApiServer { Url = $"{virtualPath}/{httpReq.Headers["X-Forwarded-Prefix"]}" } };
+            });
+        });
         app.UseAbpSwaggerUI(c =>
         {
             c.IndexStream = () => GetType().GetTypeInfo().Assembly.GetManifestResourceStream("Aquarius.index.html");
-
+            c.SwaggerEndpoint($"{virtualPath}/swagger/v1/swagger.json", "Aquarius API");
             c.SwaggerEndpoint("/swagger/v1/swagger.json", "Aquarius API");
-
-            var configuration = context.ServiceProvider.GetRequiredService<IConfiguration>();
             c.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
             c.OAuthScopes("Aquarius");
         });
